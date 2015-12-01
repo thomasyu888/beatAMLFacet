@@ -8,7 +8,7 @@ To run, fork or clone this repository, or:
 
 ```
 library(shiny)
-shiny::runGitHub("Sage-Bionetworks/SynapseFacetedSearch")
+shiny::runGitHub("Sage-Bionetworks/SynapseShinyFacetedSearch")
 ```
 
 ### Requirements
