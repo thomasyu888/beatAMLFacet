@@ -22,6 +22,9 @@ allData <- synQuery(sprintf(queryTemplate, colsToUseStr, benefactorId),
 colnames(allData) <- gsub(".*\\.", "", colnames(allData))
 allData <- allData[, colsToUse]
 
+# Filter
+allData <- allData %>% filter(dataType != "", !is.na(dataType))
+
 # Turn IDs into urls that open in new tab/window
 allData$id <- paste('<a href="https://www.synapse.org/#!Synapse:', allData$id, 
                     '" target="_blank">', allData$id, '</a>', sep="")
