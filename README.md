@@ -10,7 +10,7 @@ A searchable table of raw and processed data files using Synapse annotations.
 1.  Click on "Check the URL".  (GitHub won't import until you've done this.)
 1.  Select the owner for your new repository.
     (This will probably be you, but may instead be an organization you belong to.)
-1.  Choose a name for your workshop website repository.
+1.  Choose a name for your repository.
 
     You can now click "Begin Import".
     When the process is done,
