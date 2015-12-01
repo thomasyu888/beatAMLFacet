@@ -2,14 +2,20 @@
 
 A searchable table of raw and processed data files using Synapse annotations.
 
-### Running
+ Do *not* fork this repository directly on GitHub. Instead, please use GitHub's importer following the instructions [below](#creating-a-repository).
+ 
+## Creating a Repository
 
-To run, fork or clone this repository, or:
+1.  Go to [GitHub's importer][import].
+1.  Click on "Check the URL".  (GitHub won't import until you've done this.)
+1.  Select the owner for your new repository.
+    (This will probably be you, but may instead be an organization you belong to.)
+1.  Choose a name for your workshop website repository.
 
-```
-library(shiny)
-shiny::runGitHub("Sage-Bionetworks/SynapseShinyFacetedSearch")
-```
+    You can now click "Begin Import".
+    When the process is done,
+    you can click "Continue to repository" to visit your newly-created repository.
+
 
 ### Requirements
 
