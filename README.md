@@ -11,10 +11,7 @@ A searchable table of raw and processed data files using Synapse annotations.
 1.  Select the owner for your repository (This will probably be you, but may instead be an organization you belong to).
 1.  Choose a name for your repository.
 
-    You can now click "Begin Import".
-    When the process is done,
-    you can click "Continue to repository" to visit your newly-created repository.
-
+You can now click "Begin Import". When the process is done, you can click "Continue to repository" to visit your newly-created repository.
 
 ### Requirements
 
