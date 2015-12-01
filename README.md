@@ -6,7 +6,7 @@ A searchable table of raw and processed data files using Synapse annotations.
  
 ## Creating a Repository
 
-1.  Go to [GitHub's importer][import].
+1.  Go to [GitHub's importer][https://import.github.com/new?import_url=https://github.com/Sage-Bionetworks/SynapseShinyFacetedSearch].
 1.  Click on "Check the URL".  (GitHub won't import until you've done this.)
 1.  Select the owner for your new repository.
     (This will probably be you, but may instead be an organization you belong to.)
