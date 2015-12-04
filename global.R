@@ -5,7 +5,7 @@ library(stringr)
 library(synapseClient)
 
 synapseLogin()
-benefactorId <- "syn1773109"
+projectId <- "syn1773109"
 
 # Which columns to consider
 colsToUse <- c('id', 'dataType', 'fileType', 'fileSubType', 'UID', 'biologicalSampleName', 
@@ -15,9 +15,9 @@ colsToUse <- c('id', 'dataType', 'fileType', 'fileSubType', 'UID', 'biologicalSa
 
 # query the table with specific columns
 colsToUseStr <- paste(colsToUse, collapse=",")
-queryTemplate <- "select %s from file where benefactorId=='%s'"
+queryTemplate <- "select %s from file where projectId=='%s'"
   
-allData <- synQuery(sprintf(queryTemplate, colsToUseStr, benefactorId), 
+allData <- synQuery(sprintf(queryTemplate, colsToUseStr, projectId), 
                     blockSize=300)$collectAll()
 colnames(allData) <- gsub(".*\\.", "", colnames(allData))
 allData <- allData[, colsToUse]
