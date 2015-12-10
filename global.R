@@ -5,13 +5,13 @@ library(stringr)
 library(synapseClient)
 
 synapseLogin()
-projectId <- "syn1773109"
+projectId <- "syn2942337"
 
 # Which columns to consider
-colsToUse <- c('id', 'dataType', 'fileType', 'fileSubType', 'UID', 'biologicalSampleName', 
-               'C4_Cell_Line_ID', 'Originating_Lab_ID', 'Originating_Lab', 'Cell_Line_Type',
-               'Cell_Type_of_Origin', 'Tissue_of_Origin', 'Reprogramming_Vector_Type',
-               'Reprogramming_Gene_Combination', 'pass_qc', 'exclude')
+colsToUse <- c('id','labId','index','diagnosis','diagnosisClass',
+               'sampleGroup','algorithm','coreFlowCellId',
+               'flowCell','fileSize','modifiedDate','fileType',
+               'coreSampleId','lane')
 
 # query the table with specific columns
 colsToUseStr <- paste(colsToUse, collapse=",")
@@ -19,11 +19,12 @@ queryTemplate <- "select %s from file where projectId=='%s'"
   
 allData <- synQuery(sprintf(queryTemplate, colsToUseStr, projectId), 
                     blockSize=300)$collectAll()
+
 colnames(allData) <- gsub(".*\\.", "", colnames(allData))
 allData <- allData[, colsToUse]
 
 # Filter
-allData <- allData %>% filter(dataType != "", !is.na(dataType))
+allData <- allData %>% filter(labId != "", !is.na(labId))
 
 # Turn IDs into urls that open in new tab/window
 allData$id <- paste('<a href="https://www.synapse.org/#!Synapse:', allData$id, 
